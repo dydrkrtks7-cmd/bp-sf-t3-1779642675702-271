@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서버 식는 소리 들린다 🔥 마포 웜업 & PBN 블로그</title>
+    <meta name="description" content="PBN은 죽었다? 네가 죽었어. 마포 No.1 웜업 서비스가 진짜 PBN 생존 전략을 까발린다. 원칙 파괴, 규격 외 웜업. 지금 전화해 010-6279-0862">
+    <meta name="keywords" content="PBN, PBN 빌더, 서버 웜업, 마포 서버, 웜업 전략, PBN 생존, 서버 최적화, 프라이빗 블로그 네트워크">
+    <link rel="canonical" href="https://sf-t3-1779642675702-271.pages.dev/blog">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <meta property="og:title" content="🔥 PBN은 죽지 않았다 — 진짜 웜업이 답이다">
+    <meta property="og:description" content="네가 아는 PBN 전략은 다 구라다. 진짜는 웜업이다. 마포 웜업 & PBN 빌더가 전하는 충격적 진실.">
+    <style>
+        /* ===== RESET ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        /* ===== CSS CUSTOM PROPERTIES (동일 디자인 시스템) ===== */
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a26;
+            --text-primary: #e0e0ff;
+            --text-secondary: #8888aa;
+            --accent: #ff2a6d;
+            --accent-hover: #ff5590;
+            --neon-cyan: #00f0ff;
+            --neon-yellow: #f0e100;
+            --border-color: #2a2a3a;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+            --spacing-unit: 8px;
+            --max-width: 1200px;
+            --header-height: 64px;
+        }
+
+        /* ===== BASE ===== */
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        a { color: var(--neon-cyan); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent); }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+        h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+        h3 { font-size: 1.3rem; }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* ===== HEADER / NAV (이전 페이지와 동일) ===== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(10, 10, 15, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+        .site-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: calc(var(--spacing-unit) * 3);
+        }
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-links a.active { color: var(--neon-yellow); }
+
+        /* ===== BLOG SECTION (기존 섹션 구조 재사용) ===== */
+        .page-section {
+            padding: calc(var(--header-height) + 48px) 0 64px;
+        }
+
+        /* 카드 스타일 — 이전 FAQ / 서비스 카드와 동일 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            margin: calc(var(--spacing-unit) * 3) 0;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: 4px;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+        .card h3 {
+            color: var(--neon-cyan);
+            margin-bottom: var(--spacing-unit);
+        }
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .card .meta {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-top: var(--spacing-unit);
+            display: block;
+        }
+
+        /* 블로그 전용 — 히어로 스타일 재사용 */
+        .hero-blog {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+            border: 1px solid var(--border-color);
+            padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+            margin-bottom: calc(var(--spacing-unit) * 4);
+            border-radius: 4px;
+            position: relative;
+        }
+        .hero-blog::after {
+            content: '▇';
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            font-family: var(--font-mono);
+        }
+        .hero-blog h1 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-unit);
+        }
+        .hero-blog h1 span { color: var(--neon-yellow); }
+        .hero-blog .subhead {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 720px;
+            line-height: 1.6;
+        }
+        .hero-blog .author-line {
+            font-family: var(--font-mono);
+            color: var(--accent);
+            margin-top: calc(var(--spacing-unit) * 2);
+            font-size: 0.85rem;
+        }
+
+        /* 본문 스타일 */
+        .post-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .post-body p {
+            margin-bottom: 1.2rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .post-body h2 {
+            color: var(--text-primary);
+            margin: calc(var(--spacing-unit) * 3) 0 var(--spacing-unit);
+            border-left: 4px solid var(--accent);
+            padding-left: calc(var(--spacing-unit));
+        }
+        .post-body blockquote {
+            border-left: 3px solid var(--neon-cyan);
+            padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+            margin: calc(var(--spacing-unit) * 2) 0;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-style: italic;
+        }
+        .post-body .highlight-box {
+            background: var(--bg-card);
+            border: 1px dashed var(--neon-yellow);
+            padding: calc(var(--spacing-unit) * 2);
+            margin: calc(var(--spacing-unit) * 2) 0;
+            font-family: var(--font-mono);
+            color: var(--neon-yellow);
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            margin-top: calc(var(--spacing-unit) * 5);
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 4);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+        .cta-section h2 { color: var(--accent); }
+        .cta-section p { color: var(--text-secondary); margin: var(--spacing-unit) 0 calc(var(--spacing-unit) * 2); }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--accent);
+            color: #0a0a0f;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 2px;
+            transition: background 0.2s, transform 0.1s;
+            font-family: var(--font-mono);
+        }
+        .cta-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.02);
+            color: #0a0a0f;
+        }
+
+        /* ===== FOOTER (동일) ===== */
+        .site-footer {
+            border-top: 1px solid var(--border-color);
+            padding: calc(var(--spacing-unit) * 4) 0;
+            margin-top: calc(var(--spacing-unit) * 4);
+        }
+        .site-footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-unit);
+        }
+        .site-footer .copy {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        .site-footer .phone-badge {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .site-header .container { flex-direction: column; gap: 8px; padding: 8px 0; }
+            .nav-links { gap: 16px; }
+            .card-grid { grid-template-columns: 1fr; }
+            .hero-blog { padding: 32px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER (동일) ===== -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">마포<span>웜업</span>·PBN</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="https://sf-t3-1779642675702-271.pages.dev/">홈</a></li>
+                    <li><a href="https://sf-t3-1779642675702-271.pages.dev/about">서비스</a></li>
+                    <li><a href="https://sf-t3-1779642675702-271.pages.dev/price">가격</a></li>
+                    <li><a href="#" class="active">블로그</a></li>
+                    <li><a href="https://sf-t3-1779642675702-271.pages.dev/contact">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== BLOG PAGE ===== -->
+    <main class="page-section">
+        <div class="container">
+
+            <!-- 히어로 — 블로그 포스트 헤드라인 -->
+            <section class="hero-blog">
+                <h1>PBN은 <span>죽지 않았다</span> — 네가 죽었을 뿐</h1>
+                <p class="subhead">
+                    규격 외 웜업, 원칙 파괴 PBN. 수많은 빌더가 말하는 'PBN 사망설'은 
+                    그냥 핑계다. 진짜 문제는 웜업이다. 마포 No.1 서버 웜업 서비스가 
+                    까발리는 생존 전략.
+                </p>
+                <div class="author-line">✍️ 마포 웜업 팀 · 2025.02.14 · 7분 읽음</div>
+            </section>
+
+            <!-- 본문 (정보성 글 1편) -->
+            <article class="post-body">
+
+                <p>
+                    "PBN은 죽었다." 이 말, 어디서 많이 들어봤다. 구글 업데이트, 
+                    페널티, 샌드박스 — 검색 엔진이 점점 똑똑해지면서 PBN은 
+                    위험한 도박이 되었다고들 한다. 하지만 잠깐만. 네가 생각하는 
+                    '죽음'은 진짜 PBN의 죽음이 아니라, <strong>네 PBN의 죽음</strong>일 뿐이다.
+                </p>
+
+                <h2>🔥 웜업: PBN의 심장</h2>
+                <p>
+                    대부분 PBN 빌더가 저지르는 치명적 실수: 도메인을 사자마자 
+                    바로 링크를 박는다. 그러면 구글은 '이상한 패턴'을 감지하고 
+                    네트워크 전체를 샌드박스에 넣는다. 웜업은 이걸 방지한다. 
+                    서버 수준에서 트래픽을 시뮬레이션하고, 콘텐츠를 자연스럽게 
+                    쌓으며, 에이징(aging)을 가속한다. 마치
+</body>
+</html>

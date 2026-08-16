@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · sf-t3-1779642675702-271</title>
+  <meta name="description" content="sf-t3-1779642675702-271에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-271.maphoshirts.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* ===== RESET ===== */
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ html { scroll-behavior: smooth; }
+
+ /* ===== CSS CUSTOM PROPERTIES (동일 디자인 시스템) ===== */
+ :root {
+ --bg-primary: #0a0a0f;
+ --bg-secondary: #12121a;
+ --bg-card: #1a1a26;
+ --text-primary: #e0e0ff;
+ --text-secondary: #8888aa;
+ --accent: #ff2a6d;
+ --accent-hover: #ff5590;
+ --neon-cyan: #00f0ff;
+ --neon-yellow: #f0e100;
+ --border-color: #2a2a3a;
+ --font-mono: 'Courier New', Courier, monospace;
+ --font-main: 'Helvetica Neue', Arial, sans-serif;
+ --spacing-unit: 8px;
+ --max-width: 1200px;
+ --header-height: 64px;
+ }
+
+ /* ===== BASE ===== */
+ body {
+ font-family: var(--font-main);
+ background: var(--bg-primary);
+ color: var(--text-primary);
+ line-height: 1.5;
+ min-height: 100vh;
+ }
+
+ a { color: var(--neon-cyan); text-decoration: none; transition: color 0.2s; }
+ a:hover { color: var(--accent); }
+
+ /* ===== TYPOGRAPHY ===== */
+ h1, h2, h3, h4, h5, h6 {
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ line-height: 1.1;
+ }
+ h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+ h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+ h3 { font-size: 1.3rem; }
+
+ /* ===== LAYOUT ===== */
+ .container {
+ max-width: var(--max-width);
+ margin: 0 auto;
+ padding: 0 var(--spacing-unit);
+ }
+
+ /* ===== HEADER / NAV (이전 페이지와 동일) ===== */
+ .site-header {
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: var(--header-height);
+ background: rgba(10, 10, 15, 0.92);
+ backdrop-filter: blur(12px);
+ border-bottom: 1px solid var(--border-color);
+ z-index: 1000;
+ display: flex;
+ align-items: center;
+ }
+ .site-header .container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 100%;
+ }
+ .logo {
+ font-family: var(--font-mono);
+ font-size: 1.2rem;
+ font-weight: 700;
+ color: var(--neon-cyan);
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ }
+ .logo span { color: var(--accent); }
+ .nav-links {
+ list-style: none;
+ display: flex;
+ gap: calc(var(--spacing-unit) * 3);
+ }
+ .nav-links a {
+ font-family: var(--font-mono);
+ font-size: 0.85rem;
+ color: var(--text-secondary);
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ transition: color 0.2s;
+ }
+ .nav-links a:hover { color: var(--text-primary); }
+ .nav-links a.active { color: var(--neon-yellow); }
+
+ /* ===== BLOG SECTION (기존 섹션 구조 재사용) ===== */
+ .page-section {
+ padding: calc(var(--header-height) + 48px) 0 64px;
+ }
+
+ /* 카드 스타일 — 이전 FAQ / 서비스 카드와 동일 */
+ .card-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ gap: calc(var(--spacing-unit) * 2);
+ margin: calc(var(--spacing-unit) * 3) 0;
+ }
+ .card {
+ background: var(--bg-card);
+ border: 1px solid var(--border-color);
+ padding: calc(var(--spacing-unit) * 3);
+ border-radius: 4px;
+ transition: border-color 0.3s, transform 0.2s;
+ }
+ .card:hover {
+ border-color: var(--accent);
+ transform: translateY(-4px);
+ }
+ .card h3 {
+ color: var(--neon-cyan);
+ margin-bottom: var(--spacing-unit);
+ }
+ .card p {
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ }
+ .card .meta {
+ font-family: var(--font-mono);
+ font-size: 0.75rem;
+ color: var(--accent);
+ margin-top: var(--spacing-unit);
+ display: block;
+ }
+
+ /* 블로그 전용 — 히어로 스타일 재사용 */
+ .hero-blog {
+ background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+ border: 1px solid var(--border-color);
+ padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+ margin-bottom: calc(var(--spacing-unit) * 4);
+ border-radius: 4px;
+ position: relative;
+ }
+ .hero-blog::after {
+ content: '▇';
+ position: absolute;
+ bottom: 8px;
+ right: 16px;
+ font-size: 3rem;
+ color: var(--accent);
+ opacity: 0.3;
+ font-family: var(--font-mono);
+ }
+ .hero-blog h1 {
+ color: var(--text-primary);
+ margin-bottom: var(--spacing-unit);
+ }
+ .hero-blog h1 span { color: var(--neon-yellow); }
+ .hero-blog .subhead {
+ color: var(--text-secondary);
+ font-size: 1.1rem;
+ max-width: 720px;
+ line-height: 1.6;
+ }
+ .hero-blog .author-line {
+ font-family: var(--font-mono);
+ color: var(--accent);
+ margin-top: calc(var(--spacing-unit) * 2);
+ font-size: 0.85rem;
+ }
+
+ /* 본문 스타일 */
+ .post-body {
+ max-width: 800px;
+ margin: 0 auto;
+ }
+ .post-body p {
+ margin-bottom: 1.2rem;
+ color: var(--text-secondary);
+ font-size: 1.05rem;
+ line-height: 1.7;
+ }
+ .post-body h2 {
+ color: var(--text-primary);
+ margin: calc(var(--spacing-unit) * 3) 0 var(--spacing-unit);
+ border-left: 4px solid var(--accent);
+ padding-left: calc(var(--spacing-unit));
+ }
+ .post-body blockquote {
+ border-left: 3px solid var(--neon-cyan);
+ padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+ margin: calc(var(--spacing-unit) * 2) 0;
+ background: var(--bg-secondary);
+ color: var(--text-primary);
+ font-style: italic;
+ }
+ .post-body .highlight-box {
+ background: var(--bg-card);
+ border: 1px dashed var(--neon-yellow);
+ padding: calc(var(--spacing-unit) * 2);
+ margin: calc(var(--spacing-unit) * 2) 0;
+ font-family: var(--font-mono);
+ color: var(--neon-yellow);
+ }
+
+ /* ===== CTA ===== */
+ .cta-section {
+ margin-top: calc(var(--spacing-unit) * 5);
+ text-align: center;
+ padding: calc(var(--spacing-unit) * 4);
+ background: var(--bg-secondary);
+ border: 1px solid var(--border-color);
+ border-radius: 4px;
+ }
+ .cta-section h2 { color: var(--accent); }
+ .cta-section p { color: var(--text-secondary); margin: var(--spacing-unit) 0 calc(var(--spacing-unit) * 2); }
+ .cta-btn {
+ display: inline-block;
+ padding: 12px 32px;
+ background: var(--accent);
+ color: #0a0a0f;
+ font-weight: 700;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ border: none;
+ border-radius: 2px;
+ transition: background 0.2s, transform 0.1s;
+ font-family: var(--font-mono);
+ }
+ .cta-btn:hover {
+ background: var(--accent-hover);
+ transform: scale(1.02);
+ color: #0a0a0f;
+ }
+
+ /* ===== FOOTER (동일) ===== */
+ .site-footer {
+ border-top: 1px solid var(--border-color);
+ padding: calc(var(--spacing-unit) * 4) 0;
+ margin-top: calc(var(--spacing-unit) * 4);
+ }
+ .site-footer .container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: var(--spacing-unit);
+ }
+ .site-footer .copy {
+ font-family: var(--font-mono);
+ font-size: 0.75rem;
+ color: var(--text-secondary);
+ }
+ .site-footer .phone-badge {
+ font-size: 1.1rem;
+ font-weight: 700;
+ color: var(--neon-cyan);
+ }
+
+ /* ===== RESPONSIVE ===== */
+ @media (max-width: 768px) {
+ .site-header .container { flex-direction: column; gap: 8px; padding: 8px 0; }
+ .nav-links { gap: 16px; }
+ .card-grid { grid-template-columns: 1fr; }
+ .hero-blog { padding: 32px 16px; }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · sf-t3-1779642675702-271">
+  <meta property="og:description" content="sf-t3-1779642675702-271에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-271.maphoshirts.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+ <div class="container">
+ <div class="logo">마포<span>웜업</span>·PBN</div>
+ <nav>
+ <ul class="nav-links">
+ <li><a href="https://sf-t3-1779642675702-271.pages.dev/">홈</a></li>
+ <li><a href="https://sf-t3-1779642675702-271.pages.dev/about">서비스</a></li>
+ <li><a href="https://sf-t3-1779642675702-271.pages.dev/price">가격</a></li>
+ <li><a href="#" class="active">블로그</a></li>
+ <li><a href="https://sf-t3-1779642675702-271.pages.dev/contact">문의</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0243.html">PBN 빌더 분석으로 살펴보는 마포 코인노래방 방음 시설 비교 가이드 및 소음 진동 저감 기술</a>
+        <p class="post-item__summary">쾌적한 코인노래방을 선정하기 위해서는 적절한 방음 시설, 합리적인 요금 체계, 인원수에 맞는 공간 구성이라는 세 가지 필수 조건이 충족되어야 합니다. 마포 지역처럼 유동 인구가 많은 곳은 다양한 형</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0244.html">PBN 빌더 활용과 구글 인덱싱 속도 초고속 광회선 대역폭 최적화의 기술적 상관관계 분석</a>
+        <p class="post-item__summary">웹사이트의 검색 노출을 위해 PBN 빌더를 고려하고 계신가요. 많은 관리자가 구조적인 백링크 전략에만 치중하지만, 사실 데이터를 전송하는 물리적인 회선 환경 역시 간과할 수 없는 요소입니다. 검색 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0331.html">PBN 빌더가 알려주는 합정 노래방 추천정보와 인원별 공간 선택 가이드</a>
+        <p class="post-item__summary">쾌적한 공간을 선택하기 위해서는 우선 인원수를 정확히 파악해야 합니다. 소규모 모임인지 혹은 다수의 인원이 함께하는 회식 자리인지에 따라 필요한 방의 크기가 달라지기 때문입니다. 인원 대비 적절한 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0332.html">PBN 빌더가 분석한 연남 클럽 추천정보 선택을 위한 업체 비교 기준</a>
+        <p class="post-item__summary">여러분은 밤의 열기를 즐기기 위해 새로운 공간을 선택할 때 무엇을 가장 우선으로 고려하시나요. 많은 사람이 단순히 인기 순위만을 쫓지만 자신에게 맞는 분위기를 찾는 과정은 훨씬 더 세밀한 접근을 필</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0333.html">PBN 빌더가 제안하는 합정 셔츠룸 추천정보와 후기 신뢰도 판별법</a>
+        <p class="post-item__summary">만족스러운 경험을 위해서는 먼저 신뢰할 수 있는 정보를 선별하는 단계가 필요합니다. 정보의 홍수 속에서 객관적인 지표를 찾아내야 하며, 이를 바탕으로 압구정 룸싸롱 정리의 신뢰도를 분석하는 순서를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0334.html">PBN 빌더 활용 전략으로 알아보는 공덕 가라오케 선택 가이드</a>
+        <p class="post-item__summary">디지털 마케팅의 PBN 빌더 원리를 이해하는 것은 정보의 효율적 선별에 큰 도움이 됩니다. 공덕 지역에서 저녁 시간을 계획할 때 여러 업소의 견적을 비교하는 과정 역시 이와 유사한 논리적 접근이 필</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0335.html">PBN 빌더 관점에서 본 상수 마사지 예약 실패를 줄이는 법</a>
+        <p class="post-item__summary">많은 사용자가 온라인 플랫폼을 검색할 때 PBN 빌더 방식의 획일적인 정보 노출에 의존하다가 실제 예약 단계에서 낭패를 보는 경우가 많습니다. 특히 상수 지역처럼 수요가 몰리는 곳에서는 예약 절차를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0336.html">PBN 빌더 데이터를 활용한 망원 노래방 접근성과 확인 요소</a>
+        <p class="post-item__summary">다양한 정보를 검토할 때 PBN 빌더 기반의 알고리즘이 추천하는 순위도 중요하지만, 사용자가 직접 체감하는 접근성은 완전히 다른 영역입니다. 망원 지역의 노래방을 고를 때는 위치가 도보 이동에 적합</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0337.html">PBN 빌더가 알려주는 홍대 노래방 추천정보 및 방문 시 주의사항</a>
+        <p class="post-item__summary">홍대 거리의 복잡한 골목을 헤매다 보면 어디가 괜찮은지 판단하기 어려울 때가 있습니다. 특히 처음 방문하는 사람들은 간판만 보고 들어갔다가 낭패를 보는 경우가 종종 발생하곤 합니다. 체계적인 정보를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0338.html">PBN 빌더가 검증한 공덕 셔츠룸 추천정보와 효율적인 이용 시간대</a>
+        <p class="post-item__summary">일각에서는 셔츠룸을 방문하는 것이 항상 비용 부담이 크고 복잡한 과정이라고 오해합니다. 하지만 적절한 시간대에 맞춰 방문한다면 훨씬 합리적인 가격과 서비스 환경을 누릴 수 있습니다. PBN 빌더 데</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0339.html">PBN 빌더가 제안하는 인원별 연남 유흥 추천정보와 방문 가이드</a>
+        <p class="post-item__summary">즐거운 모임을 위해서는 장소의 규모와 참여 인원의 조화가 가장 우선적으로 고려되어야 합니다. 연남동 일대에서 모임을 계획할 때 인원 구성에 따라 적합한 장소의 선택 기준이 달라집니다. PBN 빌더를</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0340.html">PBN 빌더 활용 전략과 신뢰할 수 있는 마곡 가라오케 추천정보 선별법</a>
+        <p class="post-item__summary">디지털 환경에서 정보를 구축하는 PBN 빌더 개념을 적용해 보신 적 있으신가요. 지역 내에서 최적의 장소를 찾는 과정 또한 체계적인 데이터 분석과 기준이 필요합니다. 과연 여러분이 마곡 지역에서 가</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0341.html">PBN 빌더 분석 프로세스로 확인하는 마곡 유흥 추천정보 검증 단계</a>
+        <p class="post-item__summary">PBN 빌더 기법을 이용해 데이터의 신뢰도를 분석하는 것처럼 마곡 지역의 정보를 확인할 때도 체계적인 절차가 요구됩니다. 정보를 수집하고 검증하는 단계별 접근 방식은 실수를 방지하는 가장 확실한 방</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
